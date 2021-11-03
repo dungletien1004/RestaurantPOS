@@ -3,10 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
+import 'bootstrap/dist/css/bootstrap.css'
+import Food from './components/food'
+import Foods from './components/foodList'
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    
+    <Foods />
   </React.StrictMode>,
   document.getElementById('root')
 );
