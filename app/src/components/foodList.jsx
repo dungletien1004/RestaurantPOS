@@ -74,7 +74,43 @@ class foods extends React.Component {
             type: 'food',
             name: "Cơm Chiên Gà Phi Lê Giòn",
             display: true
-        }
+        },
+        {
+            imgUrl: 'https://kfcvietnam.com.vn/uploads/product/cd5012f29bd76d8805ddfb640c21c23c.jpg',
+            dishId: 7,
+            UnitPrice: 22222,
+            leftQuantity: 20,
+            type: 'refreshments',
+            name: "Popcorn (Vừa)",
+            display: true
+        },
+        {
+            imgUrl: 'https://kfcvietnam.com.vn/uploads/product/654b474f6d239540fd535147212a9b12.jpg',
+            dishId: 7,
+            UnitPrice: 34000,
+            leftQuantity: 20,
+            type: 'refreshments',
+            name: "Khoai Tây Viên Nhân Rau Củ (5 viên)",
+            display: true
+        },
+        {
+            imgUrl: 'https://kfcvietnam.com.vn/uploads/combo/a6525886894c89c32ca47d57a9170f93.jpg',
+            dishId: 7,
+            UnitPrice: 281000,
+            leftQuantity: 20,
+            type: 'chicken',
+            name: "Gà Rán (9 miến)",
+            display: true
+        },
+        {
+            imgUrl: 'https://kfcvietnam.com.vn/uploads/combo/a6525886894c89c32ca47d57a9170f93.jpg',
+            dishId: 7,
+            UnitPrice: 281000,
+            leftQuantity: 20,
+            type: 'chicken',
+            name: "Gà Rán (9 miến)",
+            display: true
+        },
     ],
         
         displayState: 0
@@ -116,6 +152,40 @@ class foods extends React.Component {
 
     }
 
+    handleFilterChicken = () => 
+    {
+        console.log('Drinks');
+
+        this.state.foods.forEach((food) => {
+                if (food.type !== 'chicken')
+                {
+                    food.display = false;
+                }
+                else if (food.type === 'chicken')
+                {
+                    food.display = true;
+                }
+        })
+        this.setState({foods: this.state.foods})
+    }
+
+    handleFilterRefreshments = () =>
+    {
+        console.log('refreshments');
+
+        this.state.foods.forEach((food) => {
+                if (food.type !== 'refreshments')
+                {
+                    food.display = false;
+                }
+                else if (food.type === 'refreshments')
+                {
+                    food.display = true;
+                }
+        })
+        this.setState({foods: this.state.foods})
+    }
+
     handleFilterAll = () =>
     {
         console.log('All');
@@ -129,8 +199,10 @@ class foods extends React.Component {
 
     render() { 
         return <div>
-        <button onClick={() =>this.handleFilterFood()} type="button" className="btn btn-info ms-2 mt-2 mb-2">Thức Ăn</button>
+        <button onClick={() =>this.handleFilterFood()} type="button" className="btn btn-info ms-2 mt-2 mb-2">Thức Ăn Chính</button>
+        <button onClick={this.handleFilterChicken} type="button" className="btn btn-info ms-2 mt-2 mb-2">Món gà</button>
         <button onClick={this.handleFilterDrinks} type="button" className="btn btn-info ms-2 mt-2 mb-2">Thức uống</button>
+        <button onClick={this.handleFilterRefreshments} type="button" className="btn btn-info ms-2 mt-2 mb-2">Thức ăn nhẹ</button>
         <button onClick={this.handleFilterAll} type="button" className="btn btn-info ms-2 mt-2 mb-2">Tất cả</button>
         
 
