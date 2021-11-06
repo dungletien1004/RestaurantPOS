@@ -1,0 +1,39 @@
+.Itemlayer{
+    /* height:80px; */
+    border-bottom:0.3px solid rgb(228, 208, 208);
+    margin-bottom: 10px;
+    padding-left: 10px;
+}
+.Itemimg{
+    width:5%;
+    
+}
+.info{
+    display:inline-block;
+    width:80%;
+    margin-left: 10px;
+}
+
+.itemimg {
+    display:inline-block;
+    width: 20%;
+}
+
+
+.handle {
+    display:block;
+}
+
+button, .Itemname {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.Itemname{
+    font-size: 20px;
+}
+span{
+    float:right;
+    transform: translateY(-20%);
+}
+
+
