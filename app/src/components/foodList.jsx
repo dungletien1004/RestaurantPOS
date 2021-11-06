@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Food from './food'
-class foods extends React.Component {
+class Foods extends React.Component {
     state = {
         foods: [
         {
@@ -232,4 +232,4 @@ class foods extends React.Component {
     }
 }
  
-export default foods;
+export default Foods;
