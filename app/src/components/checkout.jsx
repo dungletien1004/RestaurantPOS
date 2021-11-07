@@ -10,7 +10,7 @@ class Checkout extends React.Component {
           <p className="card-text">Số lượng còn lại: {this.props.leftQuantity}</p>
           <p className="card-text">Đơn giá: {this.props.UnitPrice} đ</p>
 
-          <a href="#" className="btn btn-primary">Thêm vào giỏ hàng</a>
+          <a href="#" className="btn btn-primary">Thanh Toan</a>
         </div>
       </div>
       ;

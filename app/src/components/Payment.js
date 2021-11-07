@@ -3,7 +3,7 @@ import { useState } from "react"
 import "./Payment.css"
 import CartItem from "./CartItem"
 
-import Checkout from './components/checkout';
+import Checkout from './checkout';
 
 const Payment = function (props) {
   const [cart, setCart] = useState(0);
