@@ -2,6 +2,9 @@ import React from "react";
 import { useState } from "react"
 import "./Payment.css"
 import CartItem from "./CartItem"
+
+import Checkout from './components/checkout';
+
 const Payment = function (props) {
   const [cart, setCart] = useState(0);
   // const [listCart, setListCar] = useState([]);
@@ -55,6 +58,7 @@ const Payment = function (props) {
 
       </div>
       <button type="button" className="btn btn-danger paybtn ">PAYMENT</button>
+      <Checkout />
     </div>
   )
 }

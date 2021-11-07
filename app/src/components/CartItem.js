@@ -3,7 +3,7 @@ import { useState } from "react"
 import "./CartItem.css"
 const CartItem = ({index, name, cart, price}) => {
     const [count, setCount] = useState(0);
-    const [tax, setTax] = useState(1.1);
+    const [tax] = useState(1.1);
     const handleCountDown = () => {
         if (count > 0) {
             setCount(count - 1);
