@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Container } from 'react-materialize';
 import Food from './food'
 class Foods extends React.Component {
     state = {
@@ -199,12 +200,13 @@ class Foods extends React.Component {
 
     render() { 
         return <div>
+       
         <button onClick={() =>this.handleFilterFood()} type="button" className="btn btn-info ms-2 mt-2 mb-2">Thức Ăn Chính</button>
         <button onClick={this.handleFilterChicken} type="button" className="btn btn-info ms-2 mt-2 mb-2">Món gà</button>
         <button onClick={this.handleFilterDrinks} type="button" className="btn btn-info ms-2 mt-2 mb-2">Thức uống</button>
         <button onClick={this.handleFilterRefreshments} type="button" className="btn btn-info ms-2 mt-2 mb-2">Thức ăn nhẹ</button>
         <button onClick={this.handleFilterAll} type="button" className="btn btn-info ms-2 mt-2 mb-2">Tất cả</button>
-        
+       
 
             <div className="container-sm">
                 <div className="row align-items-start">

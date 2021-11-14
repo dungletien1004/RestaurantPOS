@@ -1,9 +1,11 @@
 import Foods from './components/foodList';
 import Footer from './components/Footer';
 import Header from './components/Header';
-
+import {Container} from "@material-ui/core"
 function App() {
+
   return (
+    
     <div className="App">
       <Header />
         <p></p>
@@ -11,6 +13,7 @@ function App() {
         <p></p>
       <Footer />
     </div>
+ 
   );
 }
 
