@@ -1,0 +1,71 @@
+/* .food-modal, .food-modal-header {
+    border-top-left-radius: 2%;
+    border-top-right-radius: 2%;
+} */
+
+.food-modal {
+    -webkit-border-radius: 0px !important;
+    -moz-border-radius: 0px !important;
+    border-radius: 0px !important; 
+}
+
+.food-modal {
+    width: 1000px;
+    height: 800px;
+    position: absolute;
+    left: 50%;
+    top: 50%; 
+    margin-left: -500px;
+    margin-top: -400px;
+    background-color: white;
+    border-radius: 2% !important;
+    box-shadow: 2px 2px 2px 2px rgb(240, 240, 240);
+}
+
+.food-modal-header{
+    height: 5%;
+    background-color: rgb(240, 240, 240);
+    padding: 10px 15px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.btnClose{
+    float: right;
+    text-align: center;
+    transform: translateY(25%);
+}
+
+.col-left, .col-right {
+   color: rgb(122, 122, 122);
+   font-size: 25px;
+
+}
+.title-row{
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.modal-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgb(240, 240, 240);
+    margin-left: 30px;
+    margin-top: 30px;
+}
+.col2{
+    text-align: right;
+}
+.paybtn{
+    display: block;
+    margin: auto;
+    width:70%;
+    font-size: 30px;
+    
+}
+
+.mr-ml-15{
+    margin-left: 15px;
+    margin-right: 15px;
+}

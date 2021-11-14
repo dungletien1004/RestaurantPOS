@@ -3,7 +3,7 @@ class Footer extends React.Component {
     render() { 
         return (
             <Fragment>
-                <div class = 'footer' style = {{textAlign : 'center',
+                <div className = 'footer' style = {{textAlign : 'center',
                                                 background : "#eeeeee"}}>
                     <img src="img/restaurant.png" alt=""
                                 width="300" height="300"  />
@@ -12,10 +12,10 @@ class Footer extends React.Component {
                         <img src="img/github.png" alt=""
                                 width="40" height="40" /></a>
                 </div>
-                <footer class="bg-white">
-                    <div class="bg-light py-2">
-                        <div class="container text-center">
-                            <p class="text-muted mb-0 py-2">© 2021 BKU HK211 Assignment CNPM.</p>
+                <footer className="bg-white">
+                    <div className="bg-light py-2">
+                        <div className="container text-center">
+                            <p className="text-muted mb-0 py-2">© 2021 BKU HK211 Assignment CNPM.</p>
                         </div>
                     </div>
                 </footer>
