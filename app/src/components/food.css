@@ -10,8 +10,10 @@
 }
 
 .food-modal {
-    width: 1000px;
-    height: 800px;
+    max-width: 1000px;
+    max-height: 800px;
+    width: 50%;
+    height:50%;
     position: absolute;
     left: 50%;
     top: 50%; 
