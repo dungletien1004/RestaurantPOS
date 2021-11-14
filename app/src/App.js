@@ -24,10 +24,11 @@ function App() {
         <p></p>
         <Foods />
         <p></p>
-      <Footer /> 
+      
       </Route>
-        
+     
       </Switch>
+      <Footer /> 
     </div>
  
   );

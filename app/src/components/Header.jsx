@@ -38,9 +38,9 @@ export default class Header extends Component {
                 </li>
                 <li class="nav-item">
                 
-                  <Link to="/menuEdit" class="nav-link" style={{
+                  <a href="/menuEdit" class="nav-link" style={{
                     background:"red",
-                    align: "right"}}>Điều chỉnh Menu</Link>
+                    align: "right"}}>Điều chỉnh Menu</a>
                   
                 </li>
               </ul>
@@ -54,11 +54,7 @@ export default class Header extends Component {
                 </button>
             </form>
             </div>
-            <Switch>
-            <Route path="/menuEdit">
-              <ManagerSignIn />
-            </Route>
-          </Switch>
+        
          
           </nav>
           {/* handle routing */}
