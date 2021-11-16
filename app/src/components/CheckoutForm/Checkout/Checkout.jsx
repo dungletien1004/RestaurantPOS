@@ -12,17 +12,16 @@ const Checkout = ({cart, order, onCaptureCheckout, error}) => {
     const [activeStep, setActiveStep] = useState(0);
     const [checkoutToken, setCheckoutToken] = useState(null); 
     const classes= useStyles();
-
+    const history=useHistory();
     useEffect(() => {
+        // Create a Checkout Token
         const generateToken = async() => {
             try{
                 const token = await commerce.checkout.generateToken(cart.id,{type:'cart'});
 
-                console.log(token);
-
                 setCheckoutToken(token);
             } catch(error){
-
+                history.pushState('/')
             }
         }
         generateToken();

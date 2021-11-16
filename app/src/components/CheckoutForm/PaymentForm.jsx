@@ -2,7 +2,7 @@ import React from 'react';
 import { Typography, Button, Divider } from '@material-ui/core';
 import { Elements, CardElement, ElementConsumer } from '@stripe/react-stripe-js';
 import {loadStripe} from '@stripe/stripe-js';
-
+import { Link, useHistory } from 'react-router-dom';
 import Review from './Review';
 
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
@@ -43,7 +43,7 @@ const PaymentForm = (checkoutToken, backStep, onCaptureCheckout, nextStep) => {
                             <CardElement />
                             <br /> <br />
                             <div style={{display:'flex', justifyContent:'spcae-between'}}>
-                                <Button variant="outlined" onClick={backStep}>Back</Button>
+                                <Button component={Link} variant="outlined" to="/cart">Back to Cart</Button>
                                 <Button type="submit" variant="contained" disabled={!stripe} color="primary">
                                     Pay {checkoutToken.live.subtotal.formatted_with_symbol}
                                 </Button>
