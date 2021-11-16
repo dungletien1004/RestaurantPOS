@@ -2,12 +2,13 @@ import React from 'react';
 import { Typography, Button, Divider } from '@material-ui/core';
 import { Elements, CardElement, ElementConsumer } from '@stripe/react-stripe-js';
 import {loadStripe} from '@stripe/stripe-js';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Review from './Review';
 
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
 
-const PaymentForm = (checkoutToken, backStep, onCaptureCheckout, nextStep) => {
+const PaymentForm = (checkoutToken, onCaptureCheckout, nextStep) => {
+
     const handleSubmit = async (event, elements, stripe) => {
         event.preventDefault();
         if (!stripe || elements) return;

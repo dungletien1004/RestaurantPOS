@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {Paper, Stepper, Step, Steplable, Typography, CircularProgress, Divider, Button, StepLabel} from '@material-ui/core';
+import {Paper, Stepper, Step, Typography, CircularProgress, Divider, Button, StepLabel} from '@material-ui/core';
 import { Link, useHistory } from 'react-router-dom';
 
 import { commerce } from '../../../lib/commerce';
@@ -15,24 +15,25 @@ const Checkout = ({cart, order, onCaptureCheckout, error}) => {
     const history=useHistory();
     useEffect(() => {
         // Create a Checkout Token
-        const generateToken = async() => {
-            try{
-                const token = await commerce.checkout.generateToken(cart.id,{type:'cart'});
-
+        if (cart.id) {
+            const generateToken = async () => {
+              try {
+                const token = await commerce.checkout.generateToken(cart.id, { type: 'cart' });
+      
                 setCheckoutToken(token);
-            } catch(error){
-                history.pushState('/')
-            }
-        }
-        generateToken();
-    }, [cart]);
+              } catch {
+                if (activeStep !== steps.length) history.push('/');
+              }
+            };
+      
+            generateToken();
+          }
+        }, [cart]);
 
     const nextStep = () => setActiveStep((prevActiveStep) => prevActiveStep + 1); 
     const backStep = () => setActiveStep((prevActiveStep) => prevActiveStep - 1); 
 
-    // const next = (data) => {
-    //     nextStep();
-    // }
+    
 
     let Confirmation = () => (order.customer ? (
         <>
@@ -50,8 +51,18 @@ const Checkout = ({cart, order, onCaptureCheckout, error}) => {
         </div>
       ));
 
+      if (error) {
+        Confirmation = () => (
+          <>
+            <Typography variant="h5">Error: {error}</Typography>
+            <br />
+            <Button component={Link} variant="outlined" type="button" to="/">Back to home</Button>
+          </>
+        );
+      }
+      
     const Form =() => activeStep===0
-    ? <PaymentForm checkoutToken ={checkoutToken} backStep={backStep} nextStep={nextStep} /> : "";
+    ? <PaymentForm checkoutToken ={checkoutToken} backStep={backStep} nextStep={nextStep} onCaptureCheckout={onCaptureCheckout} /> : "";
 
     return (
         <div>
