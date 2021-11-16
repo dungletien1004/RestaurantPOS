@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {Paper, Stepper, Step, Typography, CircularProgress, Divider, Button, StepLabel} from '@material-ui/core';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import { commerce } from '../../../lib/commerce';
 import useStyles from './styles';
@@ -12,7 +12,6 @@ const Checkout = ({cart, order, onCaptureCheckout, error}) => {
     const [activeStep, setActiveStep] = useState(0);
     const [checkoutToken, setCheckoutToken] = useState(null); 
     const classes= useStyles();
-    const history=useHistory();
     useEffect(() => {
         // Create a Checkout Token
         if (cart.id) {
@@ -22,7 +21,7 @@ const Checkout = ({cart, order, onCaptureCheckout, error}) => {
       
                 setCheckoutToken(token);
               } catch {
-                if (activeStep !== steps.length) history.push('/');
+                
               }
             };
       
@@ -60,7 +59,7 @@ const Checkout = ({cart, order, onCaptureCheckout, error}) => {
           </>
         );
       }
-      
+
     const Form =() => activeStep===0
     ? <PaymentForm checkoutToken ={checkoutToken} backStep={backStep} nextStep={nextStep} onCaptureCheckout={onCaptureCheckout} /> : "";
 

@@ -5,8 +5,7 @@ import Header from './components/Header';
 
 import Products from './components/Products/Products'
 import Checkout from './components/CheckoutForm/Checkout/Checkout';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import {Cart} from './components/Cart/Cart';
+import Cart from './components/Cart/Cart';
 import { commerce } from './lib/commerce';
 const App = () => {
   const [products, setProducts] = useState([]);
@@ -21,7 +20,7 @@ const App = () => {
 
   // Fetch Data Of Foods
   const fetchProducts = async () => {
-    const {data} = await Foods.state.foods.list();
+    const {data} = await commerce.products.list();
 
     setProducts(data);
   }
@@ -57,8 +56,8 @@ const App = () => {
   }
 
   useEffect(()=>{
-    fetchProducts();
-    fetchCart();
+    //fetchProducts();
+    //fetchCart();
   },[]);
 
   const handleCaptureCheckout = async (checkoutTokenID, newOrder) => {
@@ -81,21 +80,14 @@ const App = () => {
         <p></p>
       <Footer />
     </div>
-    <Router>
-      <div style={{ display: 'flex' }}>
-        <Switch>
-          <Route exact path="/">
-            <Products products={products} onAddToCart={handleAddToCart} handleUpdateCartQty />
-          </Route>
-          <Route exact path="/cart">
+
+
+            {/* <Products products={products} onAddToCart={handleAddToCart} handleUpdateCartQty />
+
             <Cart cart={cart} onUpdateCartQty={handleUpdateCartQty} onRemoveFromCart={handleRemoveFromCart} onEmptyCart={handleEmptyCart} />
-          </Route>
-          <Route path="/checkout" exact>
-            <Checkout cart={cart} order={order} onCaptureCheckout={handleCaptureCheckout} error={errorMessage} />
-          </Route>
-        </Switch>
-      </div>
-    </Router>
+
+            <Checkout cart={cart} order={order} onCaptureCheckout={handleCaptureCheckout} error={errorMessage} /> */}
+
     </>
   );
 };
