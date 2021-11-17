@@ -1,0 +1,53 @@
+.outterlayer{
+    /* width: 30%; */
+    height: 100%;
+
+}
+.header{
+    height: 20%;
+    margin-top: 12px;
+    border-bottom: 0.5px solid rgb(218, 208, 208);
+    padding-left: 5%;
+    padding-right: 5%;
+}
+.listcart{
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-top: 20px;
+    height: 750px;
+    overflow-y: scroll;
+    border-bottom: 0.5px solid rgb(218, 208, 208);
+}
+.cartTitle{
+    vertical-align: sub;
+    color: red;
+    font-size: 25px;
+    font-weight: bold;
+    display: inline-block;   
+    
+       
+}
+.dineBtn {
+    vertical-align: middle;
+    font-size: 20px;
+    color: rgb(52, 75, 109);
+    font-weight: bold;
+    border-radius: 20px;
+    border: none;
+    background-color: rgb(183, 189, 201);
+    float:  right;
+  
+}
+.total{
+    font-size: 25px;
+    padding-left: 5%;
+    padding-right: 10%;
+}
+.paybtn{
+    display: block;
+    margin: auto;
+    width:35%;
+    font-size: 30px;
+    
+}
+
