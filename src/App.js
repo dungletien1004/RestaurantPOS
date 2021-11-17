@@ -1,9 +1,11 @@
+import CreditCardForm from './components/CreditCardForm';
 import Foods from './components/foodList';
 import Footer from './components/Footer';
 import Header from './components/Header';
 
 function App() {
   return (
+    <>
     <div className="App">
       <Header />
         <p></p>
@@ -11,6 +13,10 @@ function App() {
         <p></p>
       <Footer />
     </div>
+    <div>
+      <CreditCardForm/>
+    </div>
+    </>
   );
 }
 

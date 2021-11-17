@@ -1,5 +1,5 @@
 import React from "react";
-import useForm from "../useForm";
+import useForm from "../useForm.js";
 import { Button, Form, Alert, Row, Col } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./CreditCardForm.css";
@@ -55,21 +55,6 @@ const CreditCardForm = () => {
                 <Form.Group>
                   <Form.Control
                     type="text"
-                    name="cardType"
-                    id="cardType"
-                    data-testid="cardType"
-                    placeholder="Card Type"
-                    value={values.cardType}
-                    onChange={handleChange}
-                    onFocus={handleFocus}
-                    isValid={errors.ctype}
-                  />
-                </Form.Group>
-              </Col>
-              <Col>
-                <Form.Group>
-                  <Form.Control
-                    type="text"
                     id="cardExpiration"
                     data-testid="cardExpiration"
                     name="cardExpiration"
@@ -81,8 +66,6 @@ const CreditCardForm = () => {
                   />
                 </Form.Group>
               </Col>
-            </Row>
-            <Row>
               <Col>
                 <Form.Group>
                   <Form.Control
@@ -98,22 +81,8 @@ const CreditCardForm = () => {
                   />
                 </Form.Group>
               </Col>
-              <Col>
-                <Form.Group>
-                  <Form.Control
-                    type="text"
-                    id="cardPostalCode"
-                    data-testid="cardPostalCode"
-                    name="cardPostalCode"
-                    placeholder="Postal Code"
-                    value={values.cardPostalCode}
-                    onChange={handleChange}
-                    onFocus={handleFocus}
-                    isValid={errors.cpostal}
-                  />
-                </Form.Group>
-              </Col>
             </Row>
+            
             <Button
               size={"block"}
               data-testid="validateButton"
