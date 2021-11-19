@@ -23,7 +23,7 @@ function LoginForm({Login, error}) {
                    <label htmlFor = "password">Mật Khẩu: </label>
                    <input type = "password" name = "password" id = "password" onChange = {e => setDetails({...details, password: e.target.value})} value = {details.password}/>
                 </div>
-                <input type = "submit" value= "LOGIN" />
+                <input type = "submit" value= "Đăng nhập" />
            </div>
        </form>
        </div>
