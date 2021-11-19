@@ -16,16 +16,16 @@ export default function Cart(props) {
             <div key={item.id} className="rowCart">
               <div className="col-2">{item.name}</div>
               <div className="col-2">
-                <button onClick={() => onRemove(item)} className="remove">
-                  -
-                </button>{' '}
                 <button onClick={() => onAdd(item)} className="add">
                   +
                 </button>
+                <button onClick={() => onRemove(item)} className="remove">
+                  -
+                </button>{' '}
               </div>
   
               <div className="col-2 text-right">
-                {item.qty} x ${item.UnitPrice.toFixed(2)}
+                {item.qty} x {item.UnitPrice.toFixed(0)}VNĐ
               </div>
             </div>
           ))}
@@ -38,7 +38,7 @@ export default function Cart(props) {
                   <strong>Tổng tiền</strong>
                 </div>
                 <div className="col-2 text-right">
-                  <strong>${totalPrice.toFixed(2)}</strong>
+                  <strong>{totalPrice.toFixed(0)}VNĐ</strong>
                 </div>
               </div>
               <hr />

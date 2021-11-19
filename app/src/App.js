@@ -1,12 +1,12 @@
 // import Checkout from './components/Checkout';
-import Footer from './components/Footer';
-import Header from './components/Header';
+import Footer from './components/Footer/Footer';
+import Header from './components/Header/Header';
 // import Foods from './components/foodList';
 import Main from './components/Main/Main';
 import Cart from './components/Cart/Cart';
-
+import LoginForm from './components/login/LoginForm';
 import data from './data';
-import { useState } from 'react';
+import React, {useState} from 'react';
 
 function App() {
   const {products} = data;
@@ -33,16 +33,41 @@ function App() {
       );
     }
   };
+  const adminUser = {
+    email: "admin@admin.com",
+    password: "admin123"
+  }
+  const [user, setUser] = useState({email: ""});
+  const [error, setError] = useState("");
+
+  const Login = details => {
+    console.log(details)
+
+    if(details.email === adminUser.email && details.password === adminUser.password){
+      console.log("Logged in");
+      setUser({
+        email: details.email
+      });
+    } else {
+      console.log("Đăng nhập không thành công");
+      setError("Đăng nhập không thành công")
+    }
+  }
   return (
     <div className="App">
-      <Header/>
-      {/* <Foods onAdd={onAdd}/> */}
-      <div className="row">
-        <Main onAdd={onAdd} products={products}></Main>
-        <Cart cartItems={cartItems} onAdd={onAdd} onRemove={onRemove}></Cart>
+    {(user.email !== "") ? (
+      <div className = "mainMenu" >
+        <Header/>  
+        <div className="row">
+          <Main onAdd={onAdd} products={products}></Main>
+          <Cart cartItems={cartItems} onAdd={onAdd} onRemove={onRemove}></Cart>
+        </div>
+        <Footer />
       </div>
-      <Footer />
-    </div>
+    ):(
+      <LoginForm Login={Login} error = {error}/>
+    )}    
+  </div>
   );
 }
 

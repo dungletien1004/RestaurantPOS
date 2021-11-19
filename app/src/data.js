@@ -77,7 +77,7 @@ const data = {
             UnitPrice: 80000,
             leftQuantity: 20,
             type: 'food',
-            name: "Cơm Chiên Gà Phi Lê Giòn",
+            name: "Cơm Chiên Gà Phi Lê",
             display: true
         },
         {
