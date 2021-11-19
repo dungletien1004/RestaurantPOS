@@ -2,8 +2,8 @@
 import Footer from './components/Footer';
 import Header from './components/Header';
 // import Foods from './components/foodList';
-import Main from './components/Main';
-import Cart from './components/Cart';
+import Main from './components/Main/Main';
+import Cart from './components/Cart/Cart';
 
 import data from './data';
 import { useState } from 'react';
