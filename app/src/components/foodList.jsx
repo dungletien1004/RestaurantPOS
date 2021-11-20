@@ -212,6 +212,7 @@ class Foods extends React.Component {
 
     render() { 
         // const {isOpen} = this.state;
+        // const {onAdd} = props;
         return <div>
         <button onClick={() =>this.handleFilterFood()} type="button" className="btn btn-info ms-2 mt-2 mb-2">Thức Ăn Chính</button>
         <button onClick={this.handleFilterChicken} type="button" className="btn btn-info ms-2 mt-2 mb-2">Món gà</button>
@@ -237,6 +238,7 @@ class Foods extends React.Component {
                         imgUrl={food.imgUrl} 
                         UnitPrice={food.UnitPrice}
                         onClick={this.showPopup}
+                        // onAdd={onAdd}
                         />
                         </div>
                     )

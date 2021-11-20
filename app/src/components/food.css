@@ -10,15 +10,13 @@
 }
 
 .food-modal {
-    max-width: 1000px;
-    max-height: 800px;
-    width: 50%;
-    height:50%;
+    width: 60%;
+    height: 98%;
     position: absolute;
     left: 50%;
     top: 50%; 
-    margin-left: -500px;
-    margin-top: -400px;
+    margin-left: -30%;
+    margin-top: -23%;
     background-color: white;
     border-radius: 2% !important;
     box-shadow: 2px 2px 2px 2px rgb(240, 240, 240);
