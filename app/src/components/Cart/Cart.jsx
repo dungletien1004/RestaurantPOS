@@ -6,6 +6,11 @@ export default function Cart(props) {
     const itemsPrice = cartItems.reduce((a, c) => a + c.qty * c.UnitPrice, 0);
     // const taxPrice = itemsPrice * 0.14;
     // const shippingPrice = itemsPrice > 2000 ? 0 : 20;
+
+    const formatter = new Intl.NumberFormat('vn',{
+      style: 'decimal'
+    });
+
     const totalPrice = itemsPrice;
     return (
       <aside className="blockCart col-1">
@@ -14,18 +19,18 @@ export default function Cart(props) {
           {cartItems.length === 0 && <div>Giỏ hàng trống</div>}
           {cartItems.map((item) => (
             <div key={item.id} className="rowCart">
-              <div className="col-2">{item.name}</div>
+              <div style = {{flex: '1', marginLeft:'1em'}}>{item.name}</div>
               <div className="col-2">
                 <button onClick={() => onAdd(item)} className="add">
                   +
                 </button>
                 <button onClick={() => onRemove(item)} className="remove">
                   -
-                </button>{' '}
+                </button>
               </div>
   
               <div className="col-2 text-right">
-                {item.qty} x {item.UnitPrice.toFixed(0)}VNĐ
+                {item.qty} x {formatter.format(item.UnitPrice.toFixed(0))}VNĐ
               </div>
             </div>
           ))}
@@ -34,11 +39,11 @@ export default function Cart(props) {
             <>
               <hr></hr>
               <div className="row">
-                <div className="col-2">
+                <div style = {{flex: '1', marginLeft:'1rem'}}>
                   <strong>Tổng tiền</strong>
                 </div>
-                <div className="col-2 text-right">
-                  <strong>{totalPrice.toFixed(0)}VNĐ</strong>
+                <div className="col-2 text-right" > 
+                  <strong>{formatter.format(totalPrice.toFixed(0))}VNĐ</strong>
                 </div>
               </div>
               <hr />

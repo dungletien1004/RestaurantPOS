@@ -55,7 +55,6 @@ function App() {
   }
   return (
     <div className="App">
-    {(user.email !== "") ? (
       <div className = "mainMenu" >
         <Header/>  
         <div className="row">
@@ -64,10 +63,21 @@ function App() {
         </div>
         <Footer />
       </div>
-    ):(
-      <LoginForm Login={Login} error = {error}/>
-    )}    
-  </div>
+    </div>
+  //   <div className="App">
+  //   {(user.email !== "") ? (
+  //     <div className = "mainMenu" >
+  //       <Header/>  
+  //       <div className="row">
+  //         <Main onAdd={onAdd} products={products}></Main>
+  //         <Cart cartItems={cartItems} onAdd={onAdd} onRemove={onRemove}></Cart>
+  //       </div>
+  //       <Footer />
+  //     </div>
+  //   ):(
+  //     <LoginForm Login={Login} error = {error}/>
+  //   )}    
+  // </div>
   );
 }
 
