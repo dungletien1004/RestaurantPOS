@@ -8,9 +8,6 @@ class  Main  extends React.Component {
   state = {
     products: [...this.props.products]
   }
-  
-  
-  
 
   handleFilterFood = () => 
   {
@@ -91,7 +88,7 @@ class  Main  extends React.Component {
   }
 
   render() {
-    return (
+    return (    
       <main className="blockMain col-2">
         
         <Container aria-setsize="outline-danger">

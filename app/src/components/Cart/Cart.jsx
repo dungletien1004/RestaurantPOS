@@ -30,9 +30,9 @@ export default function Cart(props) {
                 </button>
               </div>
   
-              <p className="col-2 text-right">
+              <div className="col-2 text-right">
                 {item.qty} x {formatter.format(item.UnitPrice.toFixed(0))}
-              </p>
+              </div>
             </div>
           ))}
   
