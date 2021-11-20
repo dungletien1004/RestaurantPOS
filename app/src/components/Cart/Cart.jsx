@@ -8,7 +8,8 @@ export default function Cart(props) {
     // const shippingPrice = itemsPrice > 2000 ? 0 : 20;
 
     const formatter = new Intl.NumberFormat('vn',{
-      style: 'decimal'
+      style: 'currency',
+      currency: "VND",
     });
 
     const totalPrice = itemsPrice;
@@ -29,9 +30,9 @@ export default function Cart(props) {
                 </button>
               </div>
   
-              <div className="col-2 text-right">
-                {item.qty} x {formatter.format(item.UnitPrice.toFixed(0))}VNĐ
-              </div>
+              <p className="col-2 text-right">
+                {item.qty} x {formatter.format(item.UnitPrice.toFixed(0))}
+              </p>
             </div>
           ))}
   
@@ -43,7 +44,7 @@ export default function Cart(props) {
                   <strong>Tổng tiền</strong>
                 </div>
                 <div className="col-2 text-right" > 
-                  <strong>{formatter.format(totalPrice.toFixed(0))}VNĐ</strong>
+                  <strong>{formatter.format(totalPrice.toFixed(0))}</strong>
                 </div>
               </div>
               <hr />
