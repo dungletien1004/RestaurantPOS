@@ -1,17 +1,98 @@
-import React from 'react';
-import './Product.css';
-export default function Product(props) {
-    const {product, onAdd} = props;
-    return (
-      <div className = "Item">
-        <img src={product.imgUrl} className="small" width="190px" height="190px" alt={product.name} />
-        <h3 >{product.name}</h3>
-        <div>Số lượng còn lại: {product.leftQuantity}</div>
-        <div>Đơn giá: {product.UnitPrice} VNĐ</div>
-        <div>
-          <button onClick={()=>{onAdd(product)}}>Thêm vào giỏ hàng</button> 
-        </div>
-      </div>  
-    );
-}
 
+import './Product.css';
+import './food.css';
+import React, { Component, Button } from 'react';
+import Modal from 'react-modal';
+
+
+class Product extends React.Component {
+  //const { product, onAdd } = props;
+  constructor(props) {
+    super(props);
+    this.state = {
+      isOpen: false,
+      count: 1,
+    }
+    
+  }
+  showPopup = () => {
+    this.setState({ isOpen: true });
+  }
+
+  hidePopup = () => {
+    this.setState({ isOpen: false });
+  }
+  handleCountDown = () => {
+    if (this.state.count > 1) {
+      // setCount(count - 1);
+      // cart(0,price * tax);
+      this.setState({ count: this.state.count - 1 })
+    }
+  }
+  handleCountUp = () => {
+
+    // setCount(count + 1);
+    // cart(1,price * tax);
+    this.setState({ count: this.state.count + 1 })
+  }
+  
+  render() {
+    const { isOpen, count } = this.state;
+
+    return <div className="Item">
+      <img src={this.props.product.imgUrl} className="small" width="190px" height="190px" alt={this.props.product.name} onClick={this.showPopup} />
+      <h3 >{this.props.product.name}</h3>
+      <div>Số lượng còn lại: {this.props.product.leftQuantity}</div>
+      <div>Đơn giá: {this.props.product.UnitPrice} VNĐ</div>
+      <div>
+        <button onClick={() => { this.props.onAdd(this.props.product) }}>Thêm vào giỏ hàng</button>
+      </div>
+      <Modal className="food-modal" isOpen={isOpen} onRequestClose={this.hidePopup}>
+        <div className="food-modal-header">
+          <b className="food-modal-title">ADD TO CART</b>
+          <i className="fas fa-times btnClose" onClick={this.hidePopup}></i>
+        </div>
+        <div className="container">
+          <div className="row">
+            <div className="col-3 col-left">
+              <img src={this.props.product.imgUrl} width="200" height="200" className="modal-image" alt="Hamburger B" onClick={this.showPopup} />
+            </div>
+            <div className="col col-right">
+              <div className="row ">
+                <div className="col col-left title-row">
+                  Item
+                </div>
+                <div className="col col-left col2 title-row">
+                  Unit Price
+                </div>
+              </div>
+              <div className="row">
+                <div className="col col-left">
+                  {this.props.product.name}
+                </div>
+                <div className="col col-left col2" style={{ color: "red", fontWeight: "bold" }}>
+                  VND {this.props.product.UnitPrice}
+                </div>
+              </div>
+              <div className="row" >
+                <div className="col col-left">
+                  Quantity
+                </div>
+                <button type="button" className="btn btn-outline-primary mr-ml-15" onClick={this.handleCountDown}>-</button>
+                <b>{count}</b>
+                <button type="button" className="btn btn-outline-danger mr-ml-15" onClick={this.handleCountUp}>+</button>
+              </div>
+              <div className="row" style = {{marginTop: "40%"}}>
+                <button type="button" className="btn btn-danger paybtn ">
+                  <i className="fas fa-shopping-cart"></i> VND {count * this.props.product.UnitPrice}
+                </button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </Modal>
+    </div>
+  }
+}
+export default Product;
