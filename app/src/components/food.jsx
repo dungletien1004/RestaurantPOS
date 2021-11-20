@@ -79,7 +79,7 @@ class Food extends React.Component {
                 <b>{count}</b>
                 <button type="button" className="btn btn-outline-danger mr-ml-15" onClick={this.handleCountUp}>+</button>
               </div>
-              <div className="row" style = {{marginTop: "70%"}}>
+              <div className="row" style = {{marginTop: "40%"}}>
                 <button type="button" className="btn btn-danger paybtn ">
                   <i className="fas fa-shopping-cart"></i> VND {count * this.props.UnitPrice}
                 </button>
