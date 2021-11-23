@@ -14,7 +14,7 @@ export default function Cart(props) {
 
     const totalPrice = itemsPrice;
     return (
-      <aside className="blockCart col-1">
+      <aside className="blockCart">
         <h2>Giỏ Hàng</h2>
         <div>
           {cartItems.length === 0 && <div>Giỏ hàng trống</div>}
@@ -49,7 +49,12 @@ export default function Cart(props) {
               </div>
               <hr />
               <div className="row">
-                <button onClick={() => alert('Implement Checkout!')}>
+                <button onClick={(e) => {
+                                                if (!window.confirm('Bạn muốn thanh toán?')) {
+                                                  e.preventDefault();
+                                                  
+                                                }
+                                            }}>
                   Thanh Toán
                 </button>
               </div>

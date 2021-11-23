@@ -11,7 +11,7 @@ function LoginForm({Login, error}) {
 
     return (
         <div className = "loginForm">
-       <form onSubmit = {submitHandler}>
+       <form onSubmit = {submitHandler} className = "FormLogin">
            <div className = "form-inner">
                <h2>Đăng nhập</h2>
                {(error !== "") ? (<div className = "error">{error}</div>): ""}

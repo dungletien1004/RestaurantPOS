@@ -89,7 +89,7 @@ class  Main  extends React.Component {
 
   render() {
     return (    
-      <main className="blockMain col-2">
+      <main className="blockMain">
         
         <Container aria-setsize="outline-danger">
         <h2>Menu</h2>
