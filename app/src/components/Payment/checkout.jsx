@@ -1,15 +1,18 @@
 import React from 'react';
-import CreditCardForm from './components/CreditCardForm';
-import Footer from './components/Footer';
-import Header from './components/Header';
+import CreditCardForm from './CreditCardForm';
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 
 class Checkout extends React.Component {
     render() { 
     return (
     <div>
-      <Footer />
-      <CreditCardForm/>
+
       <Header />
+      
+      <CreditCardForm/>
+      
+      <Footer />
     </div>
     )
     }

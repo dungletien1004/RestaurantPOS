@@ -1,51 +1,53 @@
 body {
   font-family: "Helvetica";
 }
-h1,
-h2,
-h3 {
-  margin: 0.5rem 0;
-}
-h1 {
-  font-size: 1.5rem;
-}
-h2 {
-  font-size: 1.2rem;
-}
-h3 {
-  font-size: 1rem;
-}
-a {
-  text-decoration: none;
-}
-.row {
-  display: flex;
-  justify-content: space-between;
-}
-.row.center {
-  align-items: center;
-}
-.col-1 {
-  flex: 1;
-}
-.col-2 {
-  flex: 2;
-}
 .blockMain {
   background-color: #e0e0e0;
   padding: 1rem;
-  margin: 0.5rem;
   border-radius: 0.5rem;
   max-width: 70%;
   padding-left: 50px;
+  flex: 2;
 }
-.text-right {
-  text-align: 3rem;
+.blockMain h1,
+.blockMain h2,
+.blockMain h3 {
+  margin: 0.5rem 0;
 }
-img.small {
+.blockMain h1 {
+  font-size: 1.5rem;
+}
+.blockMain h2 {
+  font-size: 1.2rem;
+  margin-right: 1rem;
+}
+.blockMain h3 {
+  font-size: 1rem;
+}
+.blockMain a {
+  text-decoration: none;
+}
+.blockMain .row {
+  display: flex;
+  justify-content: space-between;
+}
+.blockMain .row.center {
+  align-items: center;
+}
+.blockMain .col-1 {
+  flex: 1;
+}
+.blockMain .col-2 {
+  flex: 2;
+}
+
+.blockMain .text-right {
+  text-align: right;
+}
+.blockMain img.small {
   max-height: 8rem;
 }
-button {
+.blockMain button {
   font-size: 0.8rem;
   padding: 0.2rem;
   margin: 0.1rem;
@@ -55,20 +57,14 @@ button {
   width: 100%;
   cursor: pointer;
 }
-button.add {
-  background-color: #40c0f0;
-  width: 1.5rem;
-}
-button.remove {
-  background-color: #f04040;
-  width: 1.5rem;
-}
-button.badge {
+.blockMain button.badge {
   background-color: #f04040;
   border: none;
   color: #ffffff;
   width: 1.5rem;
 }
-
-button.filter {
+.blockMain .container {
+  margin: 0;
+  flex: 2;
 }
+

@@ -7,6 +7,8 @@ import Cart from './components/Cart/Cart';
 import LoginForm from './components/login/LoginForm';
 import data from './data';
 import React, {useState} from 'react';
+import Checkout from './components/Payment/checkout';
+import CreditCardForm from './components/Payment/CreditCardForm';
 
 function App() {
   const {products} = data;
@@ -63,7 +65,7 @@ function App() {
         </div>
         <Footer />
       </div>
-    </div>
+    </div>  
   //   <div className="App">
   //   {(user.email !== "") ? (
   //     <div className = "mainMenu" >

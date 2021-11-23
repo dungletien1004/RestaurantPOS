@@ -1,5 +1,5 @@
 import React from "react";
-import useForm from "../useForm.js";
+import useForm from "../../useForm";
 import { Button, Form, Alert, Row, Col } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./CreditCardForm.css";
