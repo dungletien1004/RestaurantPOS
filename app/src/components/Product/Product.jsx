@@ -54,8 +54,8 @@ class Product extends React.Component {
         </div>
         <div className="container">
           <div className="row">
-            <div className="col-3 col-left">
-              <img src={this.props.product.imgUrl} width="200" height="200" className="modal-image" alt="Hamburger B" onClick={this.showPopup} />
+            <div >
+              <img src={this.props.product.imgUrl} className="modal-image" alt="Hamburger B" onClick={this.showPopup} />
             </div>
             <div className="col col-right">
               <div className="row ">
@@ -63,7 +63,7 @@ class Product extends React.Component {
                   Item
                 </div>
                 <div className="col col-left col2 title-row">
-                  Unit Price
+                  Đơn giá
                 </div>
               </div>
               <div className="row">
@@ -76,14 +76,14 @@ class Product extends React.Component {
               </div>
               <div className="row" >
                 <div className="col col-left">
-                  Quantity
+                  Số lượng
                 </div>
-                <button type="button" className="btn btn-outline-primary mr-ml-15" onClick={this.handleCountDown}>-</button>
+                <button type="button" className="remove" onClick={this.handleCountDown}>-</button>
                 <b>{count}</b>
-                <button type="button" className="btn btn-outline-danger mr-ml-15" onClick={this.handleCountUp}>+</button>
+                <button type="button" className="add" onClick={this.handleCountUp}>+</button>
               </div>
               <div className="row" style = {{marginTop: "40%"}}>
-                <button type="button" className="btn btn-danger paybtn ">
+                <button type="button" className="btn btn-danger paybtn " onClick={() => { this.props.onAdd(this.props.product) }}>
                   <i className="fas fa-shopping-cart"></i> VND {count * this.props.product.UnitPrice}
                 </button>
               </div>
