@@ -35,7 +35,9 @@ class Product extends React.Component {
     // cart(1,price * tax);
     this.setState({ count: this.state.count + 1 })
   }
-  
+  currencyFormat(num) {
+    return num.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+  }
   render() {
     const { isOpen, count } = this.state;
 
@@ -84,7 +86,7 @@ class Product extends React.Component {
               </div>
               <div className="row" style = {{marginTop: "40%"}}>
                 <button type="button" className="btn btn-danger paybtn " onClick={() => { this.props.onAdd(this.props.product) }}>
-                  <i className="fas fa-shopping-cart"></i> VND {count * this.props.product.UnitPrice}
+                  <i className="fas fa-shopping-cart"></i> VND {this.currencyFormat(count * this.props.product.UnitPrice)}
                 </button>
               </div>
 
