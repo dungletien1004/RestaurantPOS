@@ -33,6 +33,11 @@ function App() {
       );
     }
   };
+
+  const onClear =(product) => {
+    setCartItems(cartItems.filter((x) => x.id !== product.id));
+  };
+
   const adminUser = {
     email: "admin@admin.com",
     password: "admin123"
@@ -59,7 +64,7 @@ function App() {
         <Header/>  
         <div className="row">
           <Main onAdd={onAdd} products={products}></Main>
-          <Cart cartItems={cartItems} onAdd={onAdd} onRemove={onRemove}></Cart>
+          <Cart cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} onClear={onClear}></Cart>
         </div>
         <Footer />
       </div>
