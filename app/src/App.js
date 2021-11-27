@@ -1,14 +1,12 @@
-// import Checkout from './components/Checkout';
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
-// import Foods from './components/foodList';
 import Main from './components/Main/Main';
 import Cart from './components/Cart/Cart';
 import LoginForm from './components/login/LoginForm';
 import data from './data';
 import React, {useState} from 'react';
-import Checkout from './components/Payment/checkout';
-import CreditCardForm from './components/Payment/CreditCardForm';
+// import Checkout from './components/Payment/checkout';
+// import CreditCardForm from './components/Payment/CreditCardForm';
 
 function App() {
   const {products} = data;
@@ -83,16 +81,6 @@ function App() {
     }
   }
   return (
-    // <div className="App">
-    //   <div className = "mainMenu" >
-    //     <Header/>  
-    //     <div className="row">
-    //       <Main onAdd={onAdd} products={products}></Main>
-    //       <Cart cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} onClear={onClear}></Cart>
-    //     </div>
-    //     <Footer />
-    //   </div>
-    // </div>  
     <div className="App">
     {(user.email !== "") ? (
       <div className = "mainMenu" >
