@@ -48,6 +48,10 @@ body {
     text-align: right;
     margin-right: 3rem;
   }
+  .text-left {
+    text-align: left;
+    margin-right: 3rem;
+  }
   img.small {
     max-height: 8rem;
   }
@@ -68,6 +72,10 @@ body {
   button.remove {
     background-color: #f04040;
     width: 1.5rem;
+  }
+  button.clear {
+    background-color: gray;
+    width: 4rem;
   }
   button.badge {
     background-color: #f04040;

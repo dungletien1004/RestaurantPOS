@@ -2,7 +2,7 @@ import React from 'react';
 // import Checkout from './components/Checkout';
 import "./Cart.css";
 export default function Cart(props) {
-    const { cartItems, onAdd, onRemove } = props;
+    const { cartItems, onAdd, onRemove, onClear } = props;
     const itemsPrice = cartItems.reduce((a, c) => a + c.qty * c.UnitPrice, 0);
     // const taxPrice = itemsPrice * 0.14;
     // const shippingPrice = itemsPrice > 2000 ? 0 : 20;
@@ -28,10 +28,15 @@ export default function Cart(props) {
                 <button onClick={() => onRemove(item)} className="remove">
                   -
                 </button>
+                <button onClick={() => onClear(item)} className="clear">
+                  Delete
+                </button>
               </div>
   
-              <div className="col-2 text-right">
-                {item.qty} x {formatter.format(item.UnitPrice.toFixed(0))}
+              <div className="col-2 text-left">
+                {item.qty}
+                <br/>
+                {formatter.format(item.UnitPrice.toFixed(0))}
               </div>
             </div>
           ))}
