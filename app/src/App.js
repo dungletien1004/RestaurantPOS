@@ -14,10 +14,15 @@ function App() {
 
   const onAdd = (product) => {
     const exist = cartItems.find((x) => x.id === product.id);
+    const existQty = cartItems.find((x) => x.qty < product.leftQuantity);
     if(exist){
-      setCartItems(cartItems.map((x)=>x.id === product.id ? {...exist, qty : exist.qty+1} : x
-        )
-      );
+      if(existQty){
+        setCartItems(cartItems.map((x)=>x.id === product.id ? {...exist, qty : exist.qty+1} : x
+          )
+        );
+      } else {
+        alert(`Hết hàng!!`);
+      }
     } else {
       setCartItems([...cartItems, {...product, qty:1}]);
     }
