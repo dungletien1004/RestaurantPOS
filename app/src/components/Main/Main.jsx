@@ -9,6 +9,7 @@ class  Main  extends React.Component {
     products: [...this.props.products]
   }
 
+  
   handleFilterFood = () => 
   {
       console.log('Food');
@@ -106,7 +107,7 @@ class  Main  extends React.Component {
           {this.state.products.
           filter(product => product.display===true).
           map((product) => (
-            <Product key={product.id} product={product} onAdd={this.props.onAdd}></Product>
+            <Product key={product.id} product={product} onAdd={this.props.onAdd} onAdds={this.props.onAdds}></Product>
           ))}
         </div>
       </main>

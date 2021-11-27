@@ -1,4 +1,3 @@
-
 import './Product.css';
 import './food.css';
 import React, { Component, Button } from 'react';
@@ -85,7 +84,7 @@ class Product extends React.Component {
                 <button type="button" className="add" onClick={this.handleCountUp}>+</button>
               </div>
               <div className="row" style = {{marginTop: "40%"}}>
-                <button type="button" className="btn btn-danger paybtn " onClick={() => { this.props.onAdd(this.props.product) }}>
+                <button type="button" className="btn btn-danger paybtn " onClick={() => { this.props.onAdds(this.props.product,count) }}>
                   <i className="fas fa-shopping-cart"></i> VND {this.currencyFormat(count * this.props.product.UnitPrice)}
                 </button>
               </div>

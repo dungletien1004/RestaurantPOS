@@ -16,7 +16,7 @@ function App() {
 
   const onAdd = (product) => {
     const exist = cartItems.find((x) => x.id === product.id);
-    const existQty = cartItems.find((x) => x.qty < product.leftQuantity);
+    const existQty = cartItems.find((x) => x.id === product.id && x.qty < product.leftQuantity);
     if(exist){
       if(existQty){
         setCartItems(cartItems.map((x)=>x.id === product.id ? {...exist, qty : exist.qty+1} : x
@@ -29,6 +29,23 @@ function App() {
       setCartItems([...cartItems, {...product, qty:1}]);
     }
   };
+
+  const onAdds = (product, quantity) => {
+    const exist = cartItems.find((x) => x.id === product.id);
+    const existQty = cartItems.find((x) => x.id === product.id && x.qty < product.leftQuantity);
+    if(exist){
+      if(existQty){
+        setCartItems(cartItems.map((x)=>x.id === product.id ? {...exist, qty : exist.qty + quantity} : x
+          )
+        );
+      } else {
+        alert(`Hết hàng!!`);
+      }
+    } else {
+      setCartItems([...cartItems, {...product, qty: quantity}]);
+    }
+  };
+
 
   const onRemove =(product) => {
     const exist = cartItems.find((x) => x.id === product.id);
@@ -81,8 +98,8 @@ function App() {
       <div className = "mainMenu" >
         <Header/>  
         <div className="row">
-          <Main onAdd={onAdd} products={products}></Main>
-          <Cart cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} onClear={onClear}></Cart>
+          <Main onAdd={onAdd} onAdds={onAdds} products={products}></Main>
+          <Cart cartItems={cartItems} onAdd={onAdd} onAdds={onAdds} onRemove={onRemove} onClear={onClear}></Cart>
         </div>
         <Footer />
       </div>
