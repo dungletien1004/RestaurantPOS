@@ -16,10 +16,15 @@ function App() {
 
   const onAdd = (product) => {
     const exist = cartItems.find((x) => x.id === product.id);
+    const existQty = cartItems.find((x) => x.qty < product.leftQuantity);
     if(exist){
-      setCartItems(cartItems.map((x)=>x.id === product.id ? {...exist, qty : exist.qty+1} : x
-        )
-      );
+      if(existQty){
+        setCartItems(cartItems.map((x)=>x.id === product.id ? {...exist, qty : exist.qty+1} : x
+          )
+        );
+      } else {
+        alert(`Hết hàng!!`);
+      }
     } else {
       setCartItems([...cartItems, {...product, qty:1}]);
     }
@@ -35,6 +40,11 @@ function App() {
       );
     }
   };
+
+  const onClear =(product) => {
+    setCartItems(cartItems.filter((x) => x.id !== product.id));
+  };
+
   const adminUser = {
     email: "admin@admin.com",
     password: "admin123"
@@ -61,7 +71,7 @@ function App() {
         <Header/>  
         <div className="row">
           <Main onAdd={onAdd} products={products}></Main>
-          <Cart cartItems={cartItems} onAdd={onAdd} onRemove={onRemove}></Cart>
+          <Cart cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} onClear={onClear}></Cart>
         </div>
         <Footer />
       </div>
