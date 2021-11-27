@@ -36,7 +36,7 @@ class Product extends React.Component {
     this.setState({ count: this.state.count + 1 })
   }
   currencyFormat(num) {
-    return num.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+    return num.toFixed(0).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
   }
   render() {
     const { isOpen, count } = this.state;
@@ -45,7 +45,7 @@ class Product extends React.Component {
       <img src={this.props.product.imgUrl} className="small" width="190px" height="190px" alt={this.props.product.name} onClick={this.showPopup} />
       <h3 >{this.props.product.name}</h3>
       <div>Số lượng còn lại: {this.props.product.leftQuantity}</div>
-      <div>Đơn giá: {this.props.product.UnitPrice} VNĐ</div>
+      <div>Đơn giá: {this.currencyFormat(this.props.product.UnitPrice)} VNĐ</div>
       <div>
         <button onClick={() => { this.props.onAdd(this.props.product) }}>Thêm vào giỏ hàng</button>
       </div>
@@ -73,7 +73,7 @@ class Product extends React.Component {
                   {this.props.product.name}
                 </div>
                 <div className="col col-left col2" style={{ color: "red", fontWeight: "bold" }}>
-                  VND {this.props.product.UnitPrice}
+                  VND {this.currencyFormat(this.props.product.UnitPrice)}
                 </div>
               </div>
               <div className="row" >
