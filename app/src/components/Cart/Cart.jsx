@@ -29,7 +29,7 @@ export default function Cart(props) {
                   -
                 </button>
                 <button onClick={() => onClear(item)} className="clear">
-                  Delete
+                  Xóa
                 </button>
               </div>
   

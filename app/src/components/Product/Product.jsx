@@ -50,7 +50,7 @@ class Product extends React.Component {
       </div>
       <Modal className="food-modal" isOpen={isOpen} onRequestClose={this.hidePopup}>
         <div className="food-modal-header">
-          <b className="food-modal-title">ADD TO CART</b>
+          <b className="food-modal-title">Thêm vào giỏ hàng</b>
           <i className="fas fa-times btnClose" onClick={this.hidePopup}></i>
         </div>
         <div className="container">
